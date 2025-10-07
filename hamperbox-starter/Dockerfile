@@ -1,32 +1,24 @@
-## Dockerfile
-
+# Use lightweight Python base image
 FROM python:3.11-slim
 
-
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-
+# Set working directory
 WORKDIR /app
 
-
+# Copy requirement file and install dependencies
 COPY requirements.txt /app/
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-
+# Copy entire project
 COPY . /app/
 
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
 
-RUN addgroup --system app && adduser --system --ingroup app app
+# Collect static files
+RUN python manage.py collectstatic --noinput
 
-
-RUN chmod +x /app/entrypoint.sh
-
-
-USER app
-
-
+# Expose port
 EXPOSE 8000
 
-
-ENTRYPOINT ["/app/entrypoint.sh"]
+# Start the app using Gunicorn
+CMD ["gunicorn", "hamperbox.wsgi:application", "--bind", "0.0.0.0:8000"]
