@@ -1,7 +1,5 @@
 ## Dockerfile
 
-
-```dockerfile
 FROM python:3.11-slim
 
 
@@ -32,7 +30,3 @@ EXPOSE 8000
 
 
 ENTRYPOINT ["/app/entrypoint.sh"]
-```
-
-
----
