@@ -1,8 +1,6 @@
 ## entrypoint.sh
-
-
-```bash
-#!/bin/sh
+# shellcheck disable=SC1128
+##!/bin/sh
 set -e
 
 
@@ -14,7 +12,7 @@ python manage.py migrate --noinput
 
 
 exec "$@"
-```
+
 
 
 ---

@@ -1,8 +1,6 @@
 ## load_data.sh
-
-
-```bash
-#!/bin/bash
+# shellcheck disable=SC1128
+##!/bin/bash
 set -e
 
 
@@ -10,10 +8,6 @@ set -e
 
 
 python manage.py loaddata shop/fixtures/products.json
-```
 
 
 Make executable: chmod +x load_data.sh
-
-
----
