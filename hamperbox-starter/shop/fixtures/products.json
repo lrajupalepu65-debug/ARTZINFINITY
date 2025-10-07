@@ -1,0 +1,33 @@
+[
+{
+"model": "shop.category",
+"pk": 1,
+"fields": {"name": "Gifts", "slug": "gifts"}
+},
+{
+"model": "shop.product",
+"pk": 1,
+"fields": {
+"title": "Sweet Treats Hamper",
+"slug": "sweet-treats-hamper",
+"description": "A curated box of sweets and chocolates.",
+"price": "19.99",
+"is_active": true,
+"created_at": "2025-10-06T00:00:00Z",
+"categories": [1]
+}
+},
+{
+"model": "shop.product",
+"pk": 2,
+"fields": {
+"title": "Wellness Hamper",
+"slug": "wellness-hamper",
+"description": "Relaxing teas, candles and self-care items.",
+"price": "29.99",
+"is_active": true,
+"created_at": "2025-10-06T00:00:00Z",
+"categories": [1]
+}
+}
+]
