@@ -3,7 +3,7 @@ services:
     name: hamperbox
     env: docker
     rootDir: hamperbox-starter
-    dockerfilePath: Dockerfile
+    dockerfilePath: hamperbox-starter/Dockerfile
     plan: free
     region: oregon
     envVars:
