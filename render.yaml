@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: hamperbox
+    env: docker
+    rootDir: hamperbox-starter
+    dockerfilePath: hamperbox-starter/Dockerfile
+    plan: free
+    region: oregon
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "hamperbox.onrender.com"
+      - key: PYTHONUNBUFFERED
+        value: "1"
