@@ -2,7 +2,7 @@ services:
   - type: web
     name: hamperbox
     env: docker
-    rootDir: hamperbox-starter
+    rootDir: 
     dockerfilePath: hamperbox-starter/Dockerfile
     plan: free
     region: oregon
