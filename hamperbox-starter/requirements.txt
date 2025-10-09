@@ -2,4 +2,7 @@
 django>=4.2
 djangorestframework
 Pillow
+gunicorn
+whitenoise
+
 
