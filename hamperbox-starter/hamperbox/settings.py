@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'change-me-locally')
 DEBUG = os.environ.get('DEBUG', '1') == '1'
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*", os.environ.get("RENDER_EXTERNAL_HOSTNAME", "")]
 
 
 INSTALLED_APPS = [
@@ -89,3 +89,4 @@ REST_FRAMEWORK = {
     'rest_framework.permissions.AllowAny',
     ]
 }
+
